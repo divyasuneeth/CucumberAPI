@@ -15,6 +15,8 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 
 public class AddUserStepDef extends UserServiceHelper {
+
+	
 	@Given("user has to login with working endpoint")
 	public void user_has_to_login_with_working_endpoint() {
 		
@@ -24,19 +26,24 @@ public class AddUserStepDef extends UserServiceHelper {
 
 	@When("user data is populated")
 	public void data_is_populated() {
+
 		user = GetValueObjects.getUser();
+		
 	}
 
 	@When("user added with working endpoint")
 	public void user_added_with_working_endpoint() {
+
 		Response res = addUser();
 		res.then().statusCode(201);
 		res.then().body(containsString("success"));
+		
 	}
 
 	@Then("check last added record is the user")
 	public void check_last_added_record_is() {
-		UserVO u= ReusableMethod.getUserFromResponse();
+		UserVO u = ReusableMethod.getUserFromResponse();
 		Assert.assertEquals(u.getAccountno(), user.getAccountno());
+		
 	}
 }

@@ -18,9 +18,12 @@ public class UserServiceHelper {
 	protected static Response res;
 	protected static String token;
 	protected static UserVO user;
+	
+	
 
 	public static String getBaseURI() {
 		return ReadPropertyFile.readProperty("baseURI");
+		
 	}
 
 	protected static Response LoginToApplication() {

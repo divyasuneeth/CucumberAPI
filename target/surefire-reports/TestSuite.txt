@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 0.464 sec <<< FAILURE! - in TestSuite
+setUpClass(com.restapi.cucumber.runner.TestRunner)  Time elapsed: 0.344 sec  <<< FAILURE!
+java.lang.IllegalArgumentException: 
+The plugin specification 'com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:' has a problem:
+
+Could not load plugin class 'com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter'.
+
+Plugin specifications should have the format of PLUGIN[:[PATH|[URI [OPTIONS]]]
+
+Valid values for PLUGIN are: html, json, junit, message, pretty, progress, rerun, summary, teamcity, testng, timeline, unused, usage
+
+PLUGIN can also be a fully qualified class name, allowing registration of 3rd party plugins. The 3rd party plugin must implement io.cucumber.plugin.Plugin
+Caused by: java.lang.NoClassDefFoundError: cucumber/api/event/ConcurrentEventListener
+Caused by: java.lang.ClassNotFoundException: cucumber.api.event.ConcurrentEventListener
+
